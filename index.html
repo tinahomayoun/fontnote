@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Font Note – Custom Font Library for iOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Inter', 'San Francisco', Arial, sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 0;
+      color: #232323;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 430px;
+      margin: 56px auto 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 32px 0 rgba(0,0,0,0.06);
+      padding: 36px 28px 32px 28px;
+      text-align: center;
+    }
+    .title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.7em;
+      letter-spacing: -1px;
+    }
+    .subtitle {
+      color: #6366f1;
+      font-weight: 500;
+      margin-bottom: 2em;
+      font-size: 1.08rem;
+      letter-spacing: .1em;
+    }
+    .info {
+      font-size: 1.07rem;
+      color: #454545;
+      margin-bottom: 2em;
+      line-height: 1.7;
+    }
+    .cta {
+      display: inline-block;
+      background: #6366f1;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0.85em 2.2em;
+      border-radius: 12px;
+      margin-bottom: 1.5em;
+      text-decoration: none;
+      transition: background .18s;
+    }
+    .cta:hover {
+      background: #4338ca;
+    }
+    .contact {
+      color: #6366f1;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .footer {
+      text-align: center;
+      color: #a3a3a3;
+      font-size: 0.98em;
+      margin-top: 2em;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 18px 6px 20px 6px; }
+      .title { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Font Note</div>
+    <div class="subtitle">Your custom font library, always with you.</div>
+    <div class="info">
+      Font Note is an app that allows designers to upload and store custom fonts on their iPhone. You can upload up to <b>10 fonts for free</b>. After that, enjoy unlimited usage for just <b>$12.99/year</b>.<br><br>
+      Made with <span style="color:#ec4899;">❤️</span> in Portland, Oregon.
+    </div>
+    <a class="cta" href="https://apps.apple.com/app/idYOUR_APP_ID_HERE" target="_blank">
+      Download on the App Store
+    </a>
+    <div style="margin: 2.2em 0 1em 0; font-weight: 500;">Questions? Feedback?</div>
+    <a class="contact" href="mailto:hello@fontnote.app">hello@fontnote.app</a>
+  </div>
+  <div class="footer">
+    &copy; 2025 Font Note. All rights reserved.
+  </div>
+</body>
+</html>
