@@ -84,16 +84,6 @@
       padding: 18px 0 16px 0;
     }
 
-    .info-card {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 2px 14px 0 rgba(0,0,0,0.07);
-  padding: 22px 28px 18px 28px;
-  margin-top: 35px;
-  max-width: 540px;
-  font-size: 1.07rem;
-}
-
     /* Overlay for draggable fonts */
     .draggable-overlay {
       position: fixed;
@@ -186,22 +176,20 @@
   <div class="main-container">
     <div class="description">
       Font Note is an iOS app that allows designers to have their custom fonts uploaded and stored on their phone. Upload up to 10 fonts for free. Unlimited usage is available for $12.99 per year.
-    </div>
-    <div class="info-card"> <div class="support-label"> style="margin-top: 12px;">
-     Private Policy/Font Note securely stores your custom fonts on our cloud server. We do not collect or share user data and respect your privacy.
-    </div> 
-         <div class="appstore-btn">
+    </div>     <div class="appstore-btn">
       <a class="store-link" href="#" target="_blank">Download on the App Store</a>
       <!-- Replace href="#" with your App Store link when ready! -->
     </div>
-      
+    <div class="support-label"> style="margin-top: 12px;">
+     Private Policy/Font Note securely stores your custom fonts on our cloud server. We do not collect or share user data and respect your privacy.
+    </div> 
       <br>
     <a class="support-link" href="mailto:support@fontnote.net">support@fontnote.net</a>
   </div>
 
   <div class="footer">
     &copy; 2025 Font Note. All rights reserved.
-  </div> </div> 
+  </div> 
   <script>
     // Simple vanilla JS draggable implementation for .draggable-font elements
     document.querySelectorAll('.draggable-font').forEach(el => {
