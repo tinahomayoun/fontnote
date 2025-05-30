@@ -109,50 +109,61 @@
   -webkit-tap-highlight-color: transparent;
   transition: box-shadow 0.2s;
     }
-
-.draggable-font:focus {
+   .draggable-font:focus {
   outline: none;
-}
-
+    }
     .draggable-font:active {
       cursor: grabbing;
       z-index: 1002;
-      box-shadow: 0 4px 32px 0 rgba(100,100,140,0.09);
+      box-shadow: 0 0px 0px 0 rgba(100,100,140,0.09);
     }
-    /* Font classes from your list */
-    .f1 { font-family: 'Poiret One', cursive; font-size: 2.2rem; font-weight: 600; letter-spacing: 0.18em;}
-    .f2 { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; }
-    .f3 { font-family: 'Montserrat', sans-serif; font-size: 2.3rem; font-weight: 500; }
-    .f4 { font-family: 'Lobster', cursive; font-size: 2.5rem; font-weight: 400; }
-    .f5 { font-family: 'Merriweather', serif; font-size: 1.4rem; font-weight: 400; }
-    .f6 { font-family: 'Roboto', sans-serif; font-size: 2.1rem; font-weight: 700;}
-    .f7 { font-family: 'Abril Fatface', serif; font-size: 3.1rem; font-weight: 400;}
-    .f8 { font-family: 'Source Code Pro', monospace; font-size: 1.4rem; font-weight: 600; letter-spacing: 0.08em;}
-    .f9 { font-family: 'Caveat', cursive; font-size: 1.7rem; font-weight: 700; }
-    .f10 { font-family: 'Quicksand', sans-serif; font-size: 2.1rem; font-weight: 700; }
-    .f11 { font-family: 'Raleway', sans-serif; font-size: 2.7rem; font-weight: 800;}
+    
+    /* Unique background colors for each draggable font */
+    .color1 { background: rgba(255, 208, 73, 0.85); color: #664300;}
+    .color2 { background: rgba(80, 230, 196, 0.85); color: #04594b;}
+    .color3 { background: rgba(119, 186, 255, 0.85); color: #10335b;}
+    .color4 { background: rgba(255, 140, 190, 0.88); color: #6b2852;}
+    .color5 { background: rgba(220, 220, 220, 0.89); color: #242424;}
+    .color6 { background: rgba(225, 95, 98, 0.88); color: #6b1a1a;}
+    .color7 { background: rgba(156, 113, 255, 0.82); color: #351868;}
+    .color8 { background: rgba(255, 239, 132, 0.88); color: #856b0d;}
+    .color9 { background: rgba(168, 255, 120, 0.88); color: #2a5a1b;}
+    .color10 { background: rgba(143, 209, 246, 0.88); color: #195e83;}
+    .color11 { background: rgba(254, 185, 120, 0.88); color: #8a4b12;}
     @media (max-width: 650px) {
       .main-container { margin-top: 32px; padding: 0 8px; }
       .description { font-size: 1.15rem; }
       .title { font-size: 1.5rem; }
-      .draggable-font { font-size: 1.2rem !important; }
+      .draggable-font { font-size: 1.1rem !important; }
     }
+    /* Different font sizes/weights for visual variety */
+    .f1 { font-size: 2.2rem; }
+    .f2 { font-size: 1.9rem; }
+    .f3 { font-size: 2.3rem; }
+    .f4 { font-size: 2.5rem; }
+    .f5 { font-size: 1.4rem; }
+    .f6 { font-size: 2.1rem; }
+    .f7 { font-size: 3.1rem; }
+    .f8 { font-size: 1.4rem; }
+    .f9 { font-size: 1.7rem; }
+    .f10 { font-size: 2.1rem; }
+    .f11 { font-size: 2.7rem; }
   </style>
 </head>
 <body>
   <!-- Draggable font variations overlay -->
   <div class="draggable-overlay" id="draggableOverlay">
-    <span class="draggable-font f1" style="top:50px;left:60px;">Font Note</span>
-    <span class="draggable-font f2" style="top:80px;left:320px;">Font Note</span>
-    <span class="draggable-font f3" style="top:170px;left:150px;">Font Note</span>
-    <span class="draggable-font f4" style="top:330px;left:600px;">Font Note</span>
-    <span class="draggable-font f5" style="top:720px;left:770px;">Font Note</span>
-    <span class="draggable-font f6" style="top:460px;left:90px;">Font Note</span>
-    <span class="draggable-font f7" style="top:100px;left:900px;">Font Note</span>
-    <span class="draggable-font f8" style="top:720px;left:420px;">Font Note</span>
-    <span class="draggable-font f9" style="top:280px;left:920px;">Font Note</span>
-    <span class="draggable-font f10" style="top:180px;left:860px;">Font Note</span>
-    <span class="draggable-font f11" style="top:620px;left:850px;">Font Note</span>
+    <span class="draggable-font f1 color1" style="top:50px;left:60px;">Font Note</span>
+    <span class="draggable-font f2 color2" style="top:80px;left:320px;">Font Note</span>
+    <span class="draggable-font f3 color3" style="top:170px;left:150px;">Font Note</span>
+    <span class="draggable-font f4 color4" style="top:130px;left:600px;">Font Note</span>
+    <span class="draggable-font f5 color5" style="top:220px;left:370px;">Font Note</span>
+    <span class="draggable-font f6 color6" style="top:260px;left:90px;">Font Note</span>
+    <span class="draggable-font f7 color7" style="top:100px;left:900px;">Font Note</span>
+    <span class="draggable-font f8 color8" style="top:220px;left:620px;">Font Note</span>
+    <span class="draggable-font f9 color9" style="top:180px;left:820px;">Font Note</span>
+    <span class="draggable-font f10 color10" style="top:80px;left:760px;">Font Note</span>
+    <span class="draggable-font f11 color11" style="top:220px;left:850px;">Font Note</span>
   </div>
 
   <div class="main-container">
