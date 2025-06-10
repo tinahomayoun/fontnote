@@ -4,66 +4,73 @@
   <meta charset="UTF-8">
   <title>Font Note – Custom Font App for iOS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Fonts for variety -->
- <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800&display=swap" rel="stylesheet">
   <style>
     html, body {
       font-family: 'Raleway', Arial, sans-serif;
-      background: #fff !important;
+      background: #f7f7f9;
       color: #181818;
       margin: 0;
       padding: 0;
       min-height: 100vh;
     }
-    .main-container {
-      max-width: 700px;
+    .main-card {
+      max-width: 420px;
       margin: 60px auto 0 auto;
-      margin-top: 5em;
-      padding: 10 28px;
-      background: #fff !important;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 8px 32px 0 rgba(60,60,90,0.10);
+      padding: 2.5em 2em 2em 2em;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      z-index: 0;
+      align-items: center;
     }
     .title {
       font-size: 2.2rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -1px;
       margin-bottom: 0.5em;
+      text-align: center;
     }
     .description {
-      font-size: 2.5rem;
-      line-height: 1.2;
+      font-size: 1.15rem;
+      line-height: 1.5;
       margin-bottom: 2em;
-      margin-top: 4em;
       color: #2a2a2a;
-      text-align: left;
+      text-align: center;
       font-weight: 400;
-      max-width: 800px;
-             -webkit-user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-tap-highlight-color: transparent;
+      max-width: 340px;
     }
-    .section {
-      font-size: 1.4rem;
-      color: #222;
-      margin-bottom: 0.5em;
-      margin-left: 0;
-      text-align: left;
-      max-width: 650px;
+    .appstore-btn {
+      margin: 1.5em 0 1em 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .store-link {
+      background: #007aff;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      padding: 0.9em 2.2em;
+      text-decoration: none;
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
+      transition: background 0.18s, box-shadow 0.18s;
+      border: none;
+      display: inline-block;
+    }
+    .store-link:hover {
+      background: #005ecb;
+      box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10);
     }
     .support-label {
-      margin-top: 2.4em;
+      margin-top: 2.2em;
       font-weight: 500;
-      color: black;
+      color: #222;
       font-size: 1rem;
       margin-bottom: 0.18em;
-             -webkit-user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-tap-highlight-color: transparent;
+      text-align: center;
     }
     .support-link {
       color: #878787;
@@ -72,6 +79,8 @@
       font-size: 1rem;
       transition: .18s;
       margin-left: 0;
+      text-align: center;
+      display: block;
     }
     .support-link:hover {
       text-decoration: underline;
@@ -80,183 +89,37 @@
       margin-top: 48px;
       text-align: center;
       color: #b6b6b6;
-      font-size: .5em;
+      font-size: .95em;
       font-family: 'Inter', Arial, sans-serif;
       padding: 18px 0 16px 0;
     }
-
-    /* Overlay for draggable fonts */
-    .draggable-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none; /* Only children will get pointer events */
-      z-index: 1000;
-      user-select: none;
-      overflow: hidden;
-    }
-    .draggable-font {
-      position: absolute;
-      cursor: grab;
-      pointer-events: all;
-      user-select: none;
-      transition: box-shadow 0.2s;
-      /* Optional drop shadow for fun */
-      text-shadow: 1px 2px 6px rgba(0,0,0,0.08);
-      white-space: pre;
-       -webkit-user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  transition: box-shadow 0.2s;
-    }
-   .draggable-font:focus {
-  outline: none;
-    }
-    .draggable-font:active {
-      cursor: grabbing;
-      z-index: 1002;
-      box-shadow: 0 0px 0px 0 rgba(100,100,140,0.09);
-    }
-    
-.draggable-font:hover, .draggable-font:active {
-  filter: blur(1.5px);
-  box-shadow: 0 0 32px 8px rgba(100,100,140,0.12);
-  background: inherit;
-  transform: scale(1.04);
-}
-    
-    /* Unique background colors for each draggable font */
-    .color1 { background: rgba(255, 208, 73, 0.85); color: #664300;}
-    .color2 { background: rgba(80, 230, 196, 0.85); color: #04594b;}
-    .color3 { background: rgba(119, 186, 255, 0.85); color: #10335b;}
-    .color4 { background: rgba(255, 140, 190, 0.88); color: #6b2852;}
-    .color5 { background: rgba(220, 220, 220, 0.89); color: #242424;}
-    .color6 { background: rgba(225, 95, 98, 0.88); color: #6b1a1a;}
-    .color7 { background: rgba(156, 113, 255, 0.82); color: #351868;}
-    .color8 { background: rgba(255, 239, 132, 0.88); color: #856b0d;}
-    .color9 { background: rgba(168, 255, 120, 0.88); color: #2a5a1b;}
-    .color10 { background: rgba(143, 209, 246, 0.88); color: #195e83;}
-    .color11 { background: rgba(254, 185, 120, 0.88); color: #8a4b12;}
     @media (max-width: 650px) {
-      .main-container { margin-top: 32px; padding: 0 8px; }
-      .description { font-size: 1.15rem; }
-      .title { font-size: 1.5rem; }
-      .draggable-font { font-size: 1.1rem !important; }
-      .appstore-btn { padding: 0; }
+      .main-card { margin-top: 32px; padding: 1.2em 0.5em; }
+      .description { font-size: 1rem; }
+      .title { font-size: 1.4rem; }
+      .store-link { font-size: 1rem; padding: 0.7em 1.2em; }
     }
-    /* Font families and sizes for variety */
-    .f1 { font-family: 'Poiret One', cursive; font-size: 2.2rem; font-weight: 600; letter-spacing: 0.18em;}
-    .f2 { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; }
-    .f3 { font-family: 'Montserrat', sans-serif; font-size: 2.3rem; font-weight: 500; }
-    .f4 { font-family: 'Lobster', cursive; font-size: 2.5rem; fo10t-weight: 400; }
-    .f5 { font-family: 'Merriweather', serif; font-size: 1.4rem; font-weight: 400; }
-    .f6 { font-family: 'Roboto', sans-serif; font-size: 2.1rem; font-weight: 700;}
-    .f7 { font-family: 'Abril Fatface', serif; font-size: 3.1rem; font-weight: 400;}
-    .f8 { font-family: 'Source Code Pro', monospace; font-size: 1.4rem; font-weight: 600; letter-spacing: 0.08em;}
-    .f9 { font-family: 'Caveat', cursive; font-size: 1.7rem; font-weight: 700; }
-    .f10 { font-family: 'Quicksand', sans-serif; font-size: 2.1rem; font-weight: 700; }
-    .f11 { font-family: 'Raleway', sans-serif; font-size: 2.7rem; font-weight: 800;}
   </style>
 </head>
 <body>
-  <!-- Draggable font variations overlay -->
-  <div class="draggable-overlay" id="draggableOverlay">
-    <span class="draggable-font f1 color1" style="top:50px;left:60px;">Font Note</span>
-    <span class="draggable-font f2 color2" style="top:80px;left:320px;">Font Note</span>
-    <span class="draggable-font f3 color3" style="top:570px;left:150px;">Font Note</span>
-    <span class="draggable-font f4 color4" style="top:730px;left:900px;">Font Note</span>
-    <span class="draggable-font f5 color5" style="top:720px;left:370px;">Font Note</span>
-    <span class="draggable-font f6 color6" style="top:460px;left:90px;">Font Note</span>
-    <span class="draggable-font f7 color7" style="top:520px;left:950px;">Font Note</span>
-    <span class="draggable-font f8 color8" style="top:220px;left:1020px;">Font Note</span>
-    <span class="draggable-font f9 color9" style="top:880px;left:1020px;">Font Note</span>
-    <span class="draggable-font f10 color10" style="top:80px;left:760px;">Font Note</span>
-    <span class="draggable-font f11 color11" style="top:40px;left:850px;">Font Note</span>
-  </div>
-
-  <div class="main-container">
+  <div class="main-card">
+    <div class="title">Font Note</div>
     <div class="description">
-      Font Note is an iOS app that allows designers to have their custom fonts uploaded and stored on their phone. Upload up to 10 fonts for free. Unlimited usage is available for $12.99 per year.
-    </div>     <div class="appstore-btn">
+      Font Note is an iOS app that allows designers to upload and store their custom fonts on their phone.<br>
+      <b>Upload up to 10 fonts for free.</b><br>
+      <span style="color:#007aff;">Unlimited usage is available for a one-time purchase of $12.99.</span>
+    </div>
+    <div class="appstore-btn">
       <a class="store-link" href="#" target="_blank">Download on the App Store</a>
       <!-- Replace href="#" with your App Store link when ready! -->
     </div>
-    <br>
-    <div class="support-label" style="margin-top: 12px;">
-     Private Policy/Font Note securely stores your custom fonts on our cloud server. We do not collect or share user data and respect your privacy.
-    </div> 
-  <br>
+    <div class="support-label">
+      Private Policy: Font Note securely stores your custom fonts on our cloud server. We do not collect or share user data and respect your privacy.
+    </div>
     <a class="support-link" href="mailto:support@fontnote.net">support@fontnote.net</a>
   </div>
-
   <div class="footer">
     &copy; 2025 Font Note. All rights reserved.
-  </div> 
-  <script>
-    // Simple vanilla JS draggable implementation for .draggable-font elements
-    document.querySelectorAll('.draggable-font').forEach(el => {
-      let offsetX = 0, offsetY = 0, startX = 0, startY = 0, dragging = false;
-
-      el.addEventListener('mousedown', function(e) {
-        dragging = true;
-        startX = e.clientX;
-        startY = e.clientY;
-        const rect = el.getBoundingClientRect();
-        offsetX = startX - rect.left;
-        offsetY = startY - rect.top;
-        el.style.zIndex = 1003;
-        document.body.style.userSelect = "none";
-      });
-
-      document.addEventListener('mousemove', function(e) {
-        if (dragging) {
-          el.style.left = (e.clientX - offsetX) + 'px';
-          el.style.top = (e.clientY - offsetY) + 'px';
-        }
-      });
-
-      document.addEventListener('mouseup', function(e) {
-        if (dragging) {
-          dragging = false;
-          el.style.zIndex = 1002;
-          document.body.style.userSelect = "";
-        }
-      });
-    });
-    // For touch devices
-    document.querySelectorAll('.draggable-font').forEach(el => {
-      let dragging = false, startX = 0, startY = 0, offsetX = 0, offsetY = 0;
-
-      el.addEventListener('touchstart', function(e) {
-        dragging = true;
-        const touch = e.touches[0];
-        startX = touch.clientX;
-        startY = touch.clientY;
-        const rect = el.getBoundingClientRect();
-        offsetX = startX - rect.left;
-        offsetY = startY - rect.top;
-        el.style.zIndex = 1003;
-        document.body.style.userSelect = "none";
-      });
-
-      window.addEventListener('touchmove', function(e) {
-        if (dragging) {
-          const touch = e.touches[0];
-          el.style.left = (touch.clientX - offsetX) + 'px';
-          el.style.top = (touch.clientY - offsetY) + 'px';
-        }
-      }, {passive: false});
-
-      window.addEventListener('touchend', function(e) {
-        if (dragging) {
-          dragging = false;
-          el.style.zIndex = 1002;
-          document.body.style.userSelect = "";
-        }
-      });
-    });
-  </script>
+  </div>
 </body>
 </html>
