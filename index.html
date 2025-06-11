@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <title>Font Note – Custom Font App for iOS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800&display=swap" rel="stylesheet">
+  <!-- Import web fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@600&family=Rubik:wght@500&family=Space+Grotesk:wght@700&family=Fira+Code:wght@500&family=EB+Garamond:wght@700&family=Archivo:wght@700&family=Quicksand:wght@700&family=IBM+Plex+Sans:wght@700&display=swap" rel="stylesheet">
   <style>
     html, body {
-      font-family: 'Raleway', Arial, sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 300;
       background: #f8f8fa;
       color: #181818;
       margin: 0;
@@ -42,6 +44,7 @@
       margin-bottom: 0.5em;
       text-align: center;
       margin-top: 2.5em;
+      font-family: 'Inter', Arial, sans-serif;
     }
     .description {
       font-size: 1.08rem;
@@ -51,6 +54,7 @@
       text-align: center;
       font-weight: 400;
       max-width: 340px;
+      font-family: 'Inter', Arial, sans-serif;
     }
     .price {
       color: #007aff;
@@ -58,6 +62,7 @@
       font-weight: 500;
       margin-bottom: 1.5em;
       text-align: center;
+      font-family: 'Inter', Arial, sans-serif;
     }
     .appstore-btn {
       margin: 1.5em 0 1em 0;
@@ -76,6 +81,7 @@
       border: none;
       display: inline-block;
       transition: background 0.18s;
+      font-family: 'Inter', Arial, sans-serif;
     }
     .store-link:hover {
       background: #005ecb;
@@ -87,6 +93,7 @@
       font-size: 0.98rem;
       margin-bottom: 0.18em;
       text-align: center;
+      font-family: 'Inter', Arial, sans-serif;
     }
     .support-link {
       color: #878787;
@@ -97,6 +104,7 @@
       margin-left: 0;
       text-align: center;
       display: block;
+      font-family: 'Inter', Arial, sans-serif;
     }
     .support-link:hover {
       text-decoration: underline;
@@ -110,7 +118,7 @@
       padding: 18px 0 16px 0;
       width: 100%;
     }
-    /* Draggable overlay and fonts (unchanged) */
+    /* Draggable overlay and fonts */
     .draggable-overlay {
       position: fixed;
       top: 0; left: 0;
@@ -126,13 +134,16 @@
       cursor: grab;
       pointer-events: all;
       user-select: none;
-      text-shadow: 1px 2px 6px rgba(0,0,0,0.08);
       white-space: pre;
       -webkit-user-select: none;
       -ms-user-select: none;
       -moz-user-select: none;
       -webkit-tap-highlight-color: transparent;
       transition: box-shadow 0.2s, filter 0.2s, transform 0.2s;
+      opacity: 0.92;
+      border-radius: 13px;
+      box-shadow: 0 0 8px 0 rgba(100,100,140,0.07);
+      padding: 2px 10px 3px 10px;
     }
     .draggable-font:focus { outline: none; }
     .draggable-font:active {
@@ -141,22 +152,21 @@
       box-shadow: 0 0px 0px 0 rgba(100,100,140,0.09);
     }
     .draggable-font:hover, .draggable-font:active {
-      filter: blur(1.5px);
-      box-shadow: 0 0 32px 8px rgba(100,100,140,0.12);
+      filter: blur(1.2px);
+      box-shadow: 0 0 32px 8px rgba(100,100,140,0.14);
       background: inherit;
-      transform: scale(1.04);
+      transform: scale(1.06) rotate(-1deg);
     }
-    .color1 { background: rgba(255, 208, 73, 0.85); color: #664300;}
-    .color2 { background: rgba(80, 230, 196, 0.85); color: #04594b;}
-    .color3 { background: rgba(119, 186, 255, 0.85); color: #10335b;}
-    .color4 { background: rgba(255, 140, 190, 0.88); color: #6b2852;}
-    .color5 { background: rgba(220, 220, 220, 0.89); color: #242424;}
-    .color6 { background: rgba(225, 95, 98, 0.88); color: #6b1a1a;}
-    .color7 { background: rgba(156, 113, 255, 0.82); color: #351868;}
-    .color8 { background: rgba(255, 239, 132, 0.88); color: #856b0d;}
-    .color9 { background: rgba(168, 255, 120, 0.88); color: #2a5a1b;}
-    .color10 { background: rgba(143, 209, 246, 0.88); color: #195e83;}
-    .color11 { background: rgba(254, 185, 120, 0.88); color: #8a4b12;}
+    .font-inter { font-family: 'Inter', Arial, sans-serif; background: #ffe075; color: #664300; font-size: 2.2em; }
+    .font-playfair { font-family: 'Playfair Display', serif; background: #b3e7fc; color: #222a37; font-size: 2.1em; font-style: italic;}
+    .font-jetbrains { font-family: 'JetBrains Mono', monospace; background: #d9c0ff; color: #351868; font-size: 1.35em; letter-spacing: 0.02em;}
+    .font-rubik { font-family: 'Rubik', sans-serif; background: #f5b7b1; color: #8a4b12; font-size: 2.2em;}
+    .font-space { font-family: 'Space Grotesk', sans-serif; background: #eafc81; color: #436b21; font-size: 1.5em;}
+    .font-fira { font-family: 'Fira Code', monospace; background: #8ed8a9; color: #194938; font-size: 1.3em; }
+    .font-garamond { font-family: 'EB Garamond', serif; background: #ffb9b9; color: #6b1a1a; font-size: 2em; }
+    .font-archivo { font-family: 'Archivo', sans-serif; background: #c8e8ff; color: #2b3856; font-size: 1.7em; font-weight: 700;}
+    .font-quicksand { font-family: 'Quicksand', sans-serif; background: #fef08a; color: #665c1b; font-size: 1.4em; }
+    .font-ibmplex { font-family: 'IBM Plex Sans', sans-serif; background: #f7c8b7; color: #964b00; font-size: 1.6em;}
     @media (max-width: 650px) {
       .main-container { margin-top: 32px; padding: 0 8px; }
       .description { font-size: 1rem; }
@@ -168,30 +178,31 @@
 <body>
   <!-- Draggable font variations overlay -->
   <div class="draggable-overlay" id="draggableOverlay">
-    <span class="draggable-font f1 color1" style="top:50px;left:60px;">Font Note</span>
-    <span class="draggable-font f2 color2" style="top:80px;left:320px;">Font Note</span>
-    <span class="draggable-font f3 color3" style="top:570px;left:150px;">Font Note</span>
-    <span class="draggable-font f4 color4" style="top:730px;left:900px;">Font Note</span>
-    <span class="draggable-font f5 color5" style="top:720px;left:370px;">Font Note</span>
-    <span class="draggable-font f6 color6" style="top:460px;left:90px;">Font Note</span>
-    <span class="draggable-font f7 color7" style="top:520px;left:950px;">Font Note</span>
-    <span class="draggable-font f8 color8" style="top:220px;left:1020px;">Font Note</span>
-    <span class="draggable-font f9 color9" style="top:880px;left:1020px;">Font Note</span>
-    <span class="draggable-font f10 color10" style="top:80px;left:760px;">Font Note</span>
-    <span class="draggable-font f11 color11" style="top:40px;left:850px;">Font Note</span>
+    <span class="draggable-font font-inter" style="top:40px;left:60px;">Font Note</span>
+    <span class="draggable-font font-playfair" style="top:80px;left:320px;">Font Note</span>
+    <span class="draggable-font font-jetbrains" style="top:570px;left:150px;">Font Note</span>
+    <span class="draggable-font font-rubik" style="top:730px;left:900px;">Font Note</span>
+    <span class="draggable-font font-space" style="top:720px;left:370px;">Font Note</span>
+    <span class="draggable-font font-fira" style="top:460px;left:90px;">Font Note</span>
+    <span class="draggable-font font-garamond" style="top:520px;left:950px;">Font Note</span>
+    <span class="draggable-font font-archivo" style="top:220px;left:1020px;">Font Note</span>
+    <span class="draggable-font font-quicksand" style="top:880px;left:1020px;">Font Note</span>
+    <span class="draggable-font font-ibmplex" style="top:80px;left:760px;">Font Note</span>
   </div>
 
   <div class="main-container">
-    <div class="title">Account</div>
+    <div class="title">Font Note for iOS</div>
     <div class="description">
-      Font Note is an iOS app that allows designers to upload and store their custom fonts on their phone.<br>
+      Font Note lets designers upload and manage their custom fonts on iPhone & iPad.<br>
       <b>Upload up to 10 fonts for free.</b>
     </div>
     <div class="price">
       Unlimited usage is available for a one-time purchase of <b>$17.99</b>.
     </div>
     <div class="appstore-btn">
-      <a class="store-link" href="#" target="_blank">Download on the App Store</a>
+      <a class="store-link" href="https://apps.apple.com/app/fontnote-net/id6746629710" target="_blank" rel="noopener">
+        Download on the App Store
+      </a>
     </div>
     <div class="support-label">
       Private Policy: Font Note securely stores your custom fonts on our cloud server. We do not collect or share user data and respect your privacy.
@@ -213,7 +224,7 @@
         offsetX = startX - rect.left;
         offsetY = startY - rect.top;
         el.style.zIndex = 1003;
-        document.body.style.userSelect = \"none\";
+        document.body.style.userSelect = "none";
       });
       document.addEventListener('mousemove', function(e) {
         if (dragging) {
@@ -225,7 +236,7 @@
         if (dragging) {
           dragging = false;
           el.style.zIndex = 1002;
-          document.body.style.userSelect = \"\";
+          document.body.style.userSelect = "";
         }
       });
     });
@@ -240,7 +251,7 @@
         offsetX = startX - rect.left;
         offsetY = startY - rect.top;
         el.style.zIndex = 1003;
-        document.body.style.userSelect = \"none\";
+        document.body.style.userSelect = "none";
       });
       window.addEventListener('touchmove', function(e) {
         if (dragging) {
@@ -253,7 +264,7 @@
         if (dragging) {
           dragging = false;
           el.style.zIndex = 1002;
-          document.body.style.userSelect = \"\";
+          document.body.style.userSelect = "";
         }
       });
     });
